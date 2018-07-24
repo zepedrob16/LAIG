@@ -1,10 +1,6 @@
-LAIG Demo Parser
+Project made by:
 
-Base code and demo scene provided by:
-- Rui Pedro Peixoto Cardoso - up201305469@fe.up.pt
-- Diogo da Silva Amaral - up201306082@fe.up.pt
-
-Adapted by:
-- Rui Rodrigues - rui.rodrigues@fe.up.pt
+Miguel Mano Fernandes - <a href="https://github.com/aquelemiguel">aquelemiguel</a>
+José Pedro Borges - <a href="https://github.com/zepedrob16">zepedrob16</a>
 
 ![alt text](https://github.com/zepedrob16/LAIG/blob/master/project-1/screenshots/full-room.png "Logo Title Text 1")
