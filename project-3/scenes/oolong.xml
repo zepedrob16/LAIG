@@ -1,0 +1,2739 @@
+<SCENE>
+
+<!-- Initial values -->
+<INITIALS>
+    <frustum near="0.1" far="500"/>                 
+    <translation x="-9.5" y="-3" z="1" />               
+    <rotation axis="x" angle="0" />                
+    <rotation axis="y" angle="45" />                
+    <rotation axis="z" angle="0" />                
+    <scale sx="0.25" sy="0.25" sz="0.25" />         
+    <reference length="5" />                        
+</INITIALS>
+
+<!-- Illumination and clear colour -->
+<ILLUMINATION>
+    <ambient r="0.2" g="0.2" b="0.2" a="1" />       
+    <background r="0" g="0" b="0" a="1" />          
+</ILLUMINATION>
+
+<!-- Lights -->
+<LIGHTS>    
+    <LIGHT id="light0">                                    
+        <enable value ="1" />                              
+        <position  x="0" y="10" z="0" w="1" />             
+        <ambient r="0.2" g="0.2" b="0.2" a="1.0" />          
+        <diffuse r="1.0" g="1.0" b="1.0" a="1.0" />        
+        <specular r="1.0" g="1.0" b="1.0" a="1.0" />      
+    </LIGHT>
+    
+    <LIGHT id="light1">                                    
+        <enable value ="1" />                             
+        <position x="30" y="10" z="0" w="1" />             
+        <ambient r="0.2" g="0.2" b="0.2" a="1.0" />       
+        <diffuse r="1.0" g="1.0" b="1.0" a="1.0" />        
+        <specular r="1.0" g="1.0" b="1.0" a="1.0" />       
+    </LIGHT>
+    
+    <LIGHT id="light2">                                   
+        <enable value ="1" />                              
+        <position x="0" y="10" z="20" w="1" />                 
+        <ambient r="0.2" g="0.2" b="0.2" a="1.0" />      
+        <diffuse r="1.0" g="1.0" b="1.0" a="1.0" />        
+        <specular r="1.0" g="1.0" b="1.0" a="1.0" />       
+    </LIGHT>
+
+    <LIGHT id="light3">                                   
+        <enable value ="1" />                              
+        <position x="30" y="10" z="20" w="1" />                 
+        <ambient r="0.2" g="0.2" b="0.2" a="1.0" />             
+        <diffuse r="0.6" g="0.6" b="0.6" a="1.0" />       
+        <specular r="0.6" g="0.6" b="0.6" a="1.0" />      
+    </LIGHT>
+</LIGHTS>
+
+<!-- Textures -->
+<TEXTURES>
+
+    <!-- Tree trunk -->
+    <TEXTURE id="dragon-flag">
+        <file path="images/dragon-flag.png" />               
+        <amplif_factor s="1" t="1" />                           
+    </TEXTURE>
+
+    <TEXTURE id="brushed-steel">
+        <file path="images/brushed-steel.jpg" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="gold">
+        <file path="images/gold.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="rosewood">
+        <file path="images/rosewood.jpg" />
+        <amplif_factor s="3" t="3" />
+    </TEXTURE>
+
+    <TEXTURE id="gong">
+        <file path="images/gong.jpg" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="chinese-pattern">
+        <file path="images/chinese-pattern.jpg" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="chinese-pattern-2">
+        <file path="images/chinese-pattern-2.jpg" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="oriental_rug_2">
+        <file path="images/oriental-rug-2.jpg" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="oriental_rug">
+        <file path="images/oriental-rug.jpg" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="japanese-wall">
+        <file path="images/japanese-wall.jpg" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="japanese-wall-2">
+        <file path="images/japanese-wall-2.jpg" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="gm-singleplayer">
+        <file path="images/gm-singleplayer.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="gm-multiplayer">
+        <file path="images/gm-multiplayer.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="gm-ai">
+        <file path="images/gm-ai.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="diff_easy">
+        <file path="images/diff-easy.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="diff_normal">
+        <file path="images/diff-normal.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="teacup_black">
+        <file path="images/teacup-black.png" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <TEXTURE id="teacup_green">
+        <file path="images/teacup-green.jpg" />
+        <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+</TEXTURES>
+
+<!-- Materials -->
+<MATERIALS>
+
+    <!-- A default material -->
+    <MATERIAL id="default_material">                                  
+        <shininess value="1" />
+        <specular r="0.0" g="0.0" b="0.0" a="1" />        
+        <diffuse r="0.4" g="0.4" b="0.4" a="1" />       
+        <ambient r="0.4" g="0.4" b="0.4" a="1" />         
+        <emission r="0.0" g="0.0" b="0.0" a="1" />        
+    </MATERIAL>
+
+    <MATERIAL id="board_material">                                  
+        <shininess value="1" />
+        <specular r="0.0" g="0.0" b="0.0" a="1" />        
+        <diffuse r="0.4" g="0.4" b="0.4" a="1" />       
+        <ambient r="1.0" g="0.7" b="0.4" a="1" />         
+        <emission r="0.0" g="0.0" b="0.0" a="1" />        
+    </MATERIAL>
+
+    <MATERIAL id="white">
+        <shininess value="1" />
+        <specular r="0.0" g="0.0" b="0.0" a="1" />        
+        <diffuse r="0.4" g="0.4" b="0.4" a="1" />       
+        <ambient r="0.4" g="0.4" b="0.4" a="1" />         
+        <emission r="0.0" g="0.0" b="0.0" a="1" />     
+    </MATERIAL>
+
+</MATERIALS>
+
+<!-- Animations -->
+<ANIMATIONS>
+</ANIMATIONS>
+
+<!-- Nodes -->
+<NODES>
+
+	<ROOT id="root" />
+
+	<!-- The root node -->
+	<NODE id="root">
+		<MATERIAL id="default_material" />
+		<TEXTURE id="null" />
+
+		<DESCENDANTS>
+            <NODEREF id="board" />
+            <NODEREF id="auxiliary_table_1" />
+            <NODEREF id="auxiliary_table_2" />
+            <NODEREF id="pieces" />
+            <NODEREF id="scenery" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="root_2">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <DESCENDANTS>
+            <NODEREF id="board_2" />
+            <NODEREF id="auxiliary_table_1" />
+            <NODEREF id="auxiliary_table_2" />
+            <NODEREF id="pieces" />
+            <NODEREF id="scenery_2" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="board_2">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+        <TRANSLATION x="8" y="15" z="14" />
+        <SCALE sx="0.4" sy="1" sz="0.4" />
+        <DESCENDANTS>
+            <NODEREF id="plates_2" />
+            <NODEREF id="borders_2" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="plates_2">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="chinese-pattern-2" />
+
+        <DESCENDANTS>
+            <NODEREF id="plate_1" />
+            <NODEREF id="plate_2" />
+            <NODEREF id="plate_3" />
+            <NODEREF id="plate_4" />
+            <NODEREF id="plate_5" />
+            <NODEREF id="plate_6" />
+            <NODEREF id="plate_7" />
+            <NODEREF id="plate_8" />
+            <NODEREF id="plate_9" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="borders_2">
+        <MATERIAL id="board_material" />
+        <TEXTURE id="clear" />
+
+        <DESCENDANTS>
+            <NODEREF id="cover_2" />
+            <NODEREF id="legs" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="cover_2">
+        <MATERIAL id="board_material" />
+        <TEXTURE id="rosewood" />
+
+        <TRANSLATION x="30" y="0" z="30" />
+        <ROTATION axis="x" angle="90"/>
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="1 32 32 30 30 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="scenery_2">
+        <MATERIAL id="default_material" /> <TEXTURE id="null" />
+        <DESCENDANTS> 
+            <NODEREF id="gong" />
+            <NODEREF id="walls_2" />
+            <NODEREF id="gamemode_selector" />
+            <NODEREF id="clock" />
+            <NODEREF id="clock_outline" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="walls_2">
+        <MATERIAL id="default_material" /> <TEXTURE id="null" />
+        <DESCENDANTS>
+            <NODEREF id="left_wall_2" />
+            <NODEREF id="right_wall_2" />
+            <NODEREF id="floor_2" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="left_wall_2">
+        <MATERIAL id="default_material" /> <TEXTURE id="japanese-wall-2" />
+        <TRANSLATION x="0" y="0" z="50" />
+        <SCALE sx="1" sy="25" sz="50" /> 
+        <ROTATION axis="y" angle="90" />
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="right_wall_2">
+        <MATERIAL id="default_material" /> <TEXTURE id="japanese-wall-2" />
+        <SCALE sx="55" sy="25" sz="1" />
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="floor_2">
+        <MATERIAL id="default_material" /> <TEXTURE id="oriental_rug_2" />
+        <TRANSLATION x="0" y="0" z="50" />
+        <SCALE sx="55" sy="1" sz="50" /> 
+        <ROTATION axis="x" angle="-90" />
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="auxiliary_table_1">
+        <MATERIAL id="default_material" /> <TEXTURE id="rosewood" />
+        <TRANSLATION x="35" y="7" z="10" />
+        <SCALE sx="0.25" sy="0.5" sz="0.25" />
+        <DESCENDANTS> <NODEREF id="borders" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="auxiliary_table_2">
+        <MATERIAL id="default_material" /> <TEXTURE id="rosewood" />
+        <TRANSLATION x="35" y="7" z="29" />
+        <SCALE sx="0.25" sy="0.5" sz="0.25" />
+        <DESCENDANTS> <NODEREF id="borders" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="scenery">
+        <MATERIAL id="default_material" /> <TEXTURE id="null" />
+        <DESCENDANTS> 
+            <NODEREF id="gong" />
+            <NODEREF id="walls" />
+            <NODEREF id="gamemode_selector" />
+            <NODEREF id="clock" />
+            <NODEREF id="clock_outline" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="gong">
+        <MATERIAL id="default_material" /> <TEXTURE id="null" />
+        <TRANSLATION x="20" y="8.5" z="3" />
+        <SCALE sx="2" sy="2" sz="2" />
+        <DESCENDANTS>
+            <NODEREF id="cymbal" />
+            <NODEREF id="support" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="cymbal">
+        <MATERIAL id="default_material" /> <TEXTURE id="gong" />
+        <DESCENDANTS> 
+            <LEAF type="cylinder" args="0.1 4 4 50 50 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="support">
+        <MATERIAL id="default_material" /> <TEXTURE id="null" />
+        <DESCENDANTS>
+            <NODEREF id="left_support" />
+            <NODEREF id="right_support" />
+            <NODEREF id="top_support" />
+            <NODEREF id="left_rope" />
+            <NODEREF id="right_rope" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="walls">
+        <MATERIAL id="default_material" /> <TEXTURE id="null" />
+        <DESCENDANTS>
+            <NODEREF id="left_wall" />
+            <NODEREF id="right_wall" />
+            <NODEREF id="floor" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="left_wall">
+        <MATERIAL id="default_material" /> <TEXTURE id="japanese-wall" />
+        <TRANSLATION x="0" y="0" z="50" />
+        <SCALE sx="1" sy="25" sz="50" /> 
+        <ROTATION axis="y" angle="90" />
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="right_wall">
+        <MATERIAL id="default_material" /> <TEXTURE id="japanese-wall" />
+        <SCALE sx="55" sy="25" sz="1" />
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="floor">
+        <MATERIAL id="default_material" /> <TEXTURE id="oriental_rug" />
+        <TRANSLATION x="0" y="0" z="50" />
+        <SCALE sx="55" sy="1" sz="50" /> 
+        <ROTATION axis="x" angle="-90" />
+        <DESCENDANTS>
+            <LEAF type="rectangle" args="0 1 1 0" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="left_support">
+        <MATERIAL id="default_material" /> <TEXTURE id="null" />
+        <TRANSLATION x="-6" y="-4.5" z="0" />
+        <ROTATION axis="x" angle="-90" />
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="10 0.15 0.15 20 20 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="right_support">
+        <MATERIAL id="default_material" /> <TEXTURE id="null" />
+        <TRANSLATION x="6" y="-4.5" z="0" />
+        <ROTATION axis="x" angle="-90" />
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="10 0.15 0.15 20 20 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="top_support">
+        <MATERIAL id="default_material" /> <TEXTURE id="null" />
+        <TRANSLATION x="6" y="5.3" z="0" />
+        <ROTATION axis="y" angle="-90" />
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="12 0.15 0.15 20 20 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="left_rope">
+        <MATERIAL id="default_material" /> <TEXTURE id="null" />
+        <TRANSLATION x="-1.5" y="3.6" z="0" />
+        <ROTATION axis="y" angle="-90" />
+        <ROTATION axis="x" angle="-80" />
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="1.7 0.10 0.10 20 20 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="right_rope">
+        <MATERIAL id="default_material" /> <TEXTURE id="null" />
+        <TRANSLATION x="1.5" y="5.2" z="0" />
+        <ROTATION axis="y" angle="-90" />
+        <ROTATION axis="x" angle="80" />
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="1.7 0.10 0.10 20 20 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="gamemode_selector">
+        <MATERIAL id="default_material" /> <TEXTURE id="null" />
+        <DESCENDANTS>
+            <NODEREF id="gm_singleplayer" />
+            <NODEREF id="gm_multiplayer" />
+            <NODEREF id="gm_ai" />
+            <NODEREF id="diff_easy" />
+            <NODEREF id="diff_normal" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="gm_singleplayer">
+        <MATERIAL id="default_material" /> <TEXTURE id="gm-singleplayer" />
+        <TRANSLATION x="38" y="16" z="0.1" />
+        <SCALE sx="9.5" sy="4" sz="1" />
+        <DESCENDANTS> <LEAF type="rectangle" args="0 1 1 0" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="gm_multiplayer">
+        <MATERIAL id="default_material" /> <TEXTURE id="gm-multiplayer" />
+        <TRANSLATION x="38" y="11" z="0.1" />
+        <SCALE sx="9.5" sy="4" sz="1" />
+        <DESCENDANTS> <LEAF type="rectangle" args="0 1 1 0" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="gm_ai">
+        <MATERIAL id="default_material" /> <TEXTURE id="gm-ai" />
+        <TRANSLATION x="38" y="6" z="0.1" />
+        <SCALE sx="9.5" sy="4" sz="1" />
+        <DESCENDANTS> <LEAF type="rectangle" args="0 1 1 0" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="diff_easy">
+        <MATERIAL id="default_material" /> <TEXTURE id="diff_easy" />
+        <TRANSLATION x="48.5" y="13.5" z="0.1" />
+        <SCALE sx="4" sy="6.5" sz="1" />
+        <DESCENDANTS> <LEAF type="rectangle" args="0 1 1 0" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="diff_normal">
+        <MATERIAL id="default_material" /> <TEXTURE id="diff_normal" />
+        <TRANSLATION x="48.5" y="6" z="0.1" />
+        <SCALE sx="4" sy="6.5" sz="1" />
+        <DESCENDANTS> <LEAF type="rectangle" args="0 1 1 0" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="clock">
+        <MATERIAL id="default_material" /> <TEXTURE id="chinese-pattern" />
+        <TRANSLATION x="0.1" y="18" z="25" />
+        <ROTATION axis="y" angle="90" />
+        <DESCENDANTS> 
+            <NODEREF id="clock_handle" />
+            <LEAF type="cylinder" args="0.2 3 3 30 30 1 1" /> 
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="clock_outline">
+        <MATERIAL id="default_material" /> <TEXTURE id="clear" />
+        <TRANSLATION x="0" y="18" z="25" />
+        <ROTATION axis="y" angle="90" />
+        <DESCENDANTS> 
+            <LEAF type="cylinder" args="0.2 3.2 3.2 30 30 1 1" /> 
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="clock_handle">
+        <MATERIAL id="default_material" /> <TEXTURE id="clear" />
+        <TRANSLATION x="0" y="0" z="0.3" />
+        <DESCENDANTS> <LEAF type="rectangle" args="0 2.5 0.2 0" /> </DESCENDANTS>
+    </NODE>
+
+    <!-- The Game Board -->
+    <NODE id="board">
+        <MATERIAL id="null" />
+        <TEXTURE id="null" />
+        <TRANSLATION x="8" y="15" z="14" />
+        <SCALE sx="0.4" sy="1" sz="0.4" />
+        <DESCENDANTS>
+            <NODEREF id="plates" />
+            <NODEREF id="borders" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- The game pieces -->
+    <NODE id="pieces">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+        <DESCENDANTS>
+            <NODEREF id="teacups_black" />
+            <NODEREF id="teacups_green" />
+            <NODEREF id="teacups_green" />-->
+            <!--<NODEREF id="flag_waiter" />-->
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacups_black">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+        <DESCENDANTS>
+            <NODEREF id="teacup_black_1" /><NODEREF id="teacup_black_2" /> <NODEREF id="teacup_black_3" /> <NODEREF id="teacup_black_4" /> 
+            <NODEREF id="teacup_black_5" /> <NODEREF id="teacup_black_6" /> <NODEREF id="teacup_black_7" /> <NODEREF id="teacup_black_8" />
+            <NODEREF id="teacup_black_9" /> <NODEREF id="teacup_black_10" /> <NODEREF id="teacup_black_11" /> <NODEREF id="teacup_black_12" />
+            <NODEREF id="teacup_black_13" /> <NODEREF id="teacup_black_14" /> <NODEREF id="teacup_black_15" /> <NODEREF id="teacup_black_16" />
+            <NODEREF id="teacup_black_17" /> <NODEREF id="teacup_black_18" /> <NODEREF id="teacup_black_19" /> <NODEREF id="teacup_black_20" />
+            <NODEREF id="teacup_black_21" /> <NODEREF id="teacup_black_22" /> <NODEREF id="teacup_black_23" /> <NODEREF id="teacup_black_24" /> 
+            <NODEREF id="teacup_black_25" /> <NODEREF id="teacup_black_26" /> <NODEREF id="teacup_black_27" /> <NODEREF id="teacup_black_28" />
+            <NODEREF id="teacup_black_29" /> <NODEREF id="teacup_black_30" /> <NODEREF id="teacup_black_31" /> <NODEREF id="teacup_black_32" />
+            <NODEREF id="teacup_black_33" /> <NODEREF id="teacup_black_34" /> <NODEREF id="teacup_black_35" /> <NODEREF id="teacup_black_36" />
+            <NODEREF id="teacup_black_37" /> <NODEREF id="teacup_black_38" /> <NODEREF id="teacup_black_39" /> <NODEREF id="teacup_black_40" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacups_green">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+        <DESCENDANTS>
+            <NODEREF id="teacup_green_1" /> <NODEREF id="teacup_green_2" /> <NODEREF id="teacup_green_3" /> <NODEREF id="teacup_green_4" /> 
+            <NODEREF id="teacup_green_5" /> <NODEREF id="teacup_green_6" /> <NODEREF id="teacup_green_7" /> <NODEREF id="teacup_green_8" />
+            <NODEREF id="teacup_green_9" /> <NODEREF id="teacup_green_10" /> <NODEREF id="teacup_green_11" /> <NODEREF id="teacup_green_12" />
+            <NODEREF id="teacup_green_13" /> <NODEREF id="teacup_green_14" /> <NODEREF id="teacup_green_15" /> <NODEREF id="teacup_green_16" />
+            <NODEREF id="teacup_green_17" /> <NODEREF id="teacup_green_18" /> <NODEREF id="teacup_green_19" /> <NODEREF id="teacup_green_20" />
+            <NODEREF id="teacup_green_21" /> <NODEREF id="teacup_green_22" /> <NODEREF id="teacup_green_23" /> <NODEREF id="teacup_green_24" /> 
+            <NODEREF id="teacup_green_25" /> <NODEREF id="teacup_green_26" /> <NODEREF id="teacup_green_27" /> <NODEREF id="teacup_green_28" />
+            <NODEREF id="teacup_green_29" /> <NODEREF id="teacup_green_30" /> <NODEREF id="teacup_green_31" /> <NODEREF id="teacup_green_32" />
+            <NODEREF id="teacup_green_33" /> <NODEREF id="teacup_green_34" /> <NODEREF id="teacup_green_35" /> <NODEREF id="teacup_green_36" />
+            <NODEREF id="teacup_green_37" /> <NODEREF id="teacup_green_38" /> <NODEREF id="teacup_green_39" /> <NODEREF id="teacup_green_40" />
+        </DESCENDANTS>
+    </NODE>
+
+
+
+    <!-- WAITER FLAG -->
+
+    <NODE id="flag_waiter">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+        <DESCENDANTS> 
+            <NODEREF id="flag_pole" />
+            <NODEREF id="flag_spike" />
+            <NODEREF id="flag_ball" />
+            <NODEREF id="flag_cloth" /> 
+            <NODEREF id="flag_base" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="flag_pole">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="brushed-steel" />
+        <ROTATION axis="x" angle="-90" />
+        <DESCENDANTS> 
+            <LEAF type="cylinder" args="3.5 0.09 0.09 20 20" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="flag_spike">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="gold" />
+        <TRANSLATION x="0" y="3.5" z="0" />
+        <ROTATION axis="x" angle="-90" />
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.5 0.13 0.01 20 20" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="flag_ball">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="gold" />
+        <TRANSLATION x="0" y="3.3" z="0" />
+        <SCALE sx="1" sy="0.8" sz="1" />
+        <ROTATION axis="x" angle="-90" />
+        <DESCENDANTS>
+            <LEAF type="sphere" args="0.13 20 20" />
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="flag_cloth">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="dragon-flag" />
+        <TRANSLATION x="2.5" y="-0.1" z="0.3" />
+        <DESCENDANTS>
+            <LEAF type="patch" args="20 20">
+                <CPLINE>
+                    <CPOINT xx="-2.455" yy="3.294" zz="-0.288" ww="1" />
+                    <CPOINT xx="-1.735" yy="3.077" zz="0.424" ww="1" />
+                    <CPOINT xx="-0.916" yy="3.095" zz="-0.82" ww="1" />
+                    <CPOINT xx="-0.54" yy="2.35" zz="-0.782" ww="1" />
+                </CPLINE>
+                <CPLINE>
+                    <CPOINT xx="-2.455" yy="2.184" zz="-0.288" ww="1" />
+                    <CPOINT xx="-2.275" yy="2.784" zz="0.349" ww="1" />
+                    <CPOINT xx="-1.136" yy="2.164" zz="-0.698" ww="1" />
+                    <CPOINT xx="-0.685" yy="1.273" zz="-0.732" ww="1" />
+                </CPLINE>
+                <CPLINE>
+                    <CPOINT xx="-2.455" yy="1.694" zz="-0.288" ww="1" />
+                    <CPOINT xx="-1.735" yy="1.477" zz="0.424" ww="1" />
+                    <CPOINT xx="-0.916" yy="1.495" zz="-0.82" ww="1" />
+                    <CPOINT xx="-0.54" yy="0.95" zz="-0.782" ww="1" />
+                </CPLINE>
+            </LEAF>
+        </DESCENDANTS>
+    </NODE>
+
+    <NODE id="flag_base">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="brushed-steel" />
+        <ROTATION axis="x" angle="-90" />
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.2 0.5 0.09 20 20" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- The plates of the table -->
+    <NODE id="plates">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="chinese-pattern" />
+
+        <DESCENDANTS>
+            <NODEREF id="plate_1" />
+            <NODEREF id="plate_2" />
+            <NODEREF id="plate_3" />
+            <NODEREF id="plate_4" />
+            <NODEREF id="plate_5" />
+            <NODEREF id="plate_6" />
+            <NODEREF id="plate_7" />
+            <NODEREF id="plate_8" />
+            <NODEREF id="plate_9" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthWest Plate -->
+
+    <NODE id="plate_1">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="17" y="0.1" z="17" />
+        <ROTATION axis="x" angle="90" />
+
+        <DESCENDANTS>
+            <NODEREF id="tiny_plate_1" />
+            <NODEREF id="tiny_plate_2" />
+            <NODEREF id="tiny_plate_3" />
+            <NODEREF id="tiny_plate_4" />
+            <NODEREF id="tiny_plate_5" />
+            <NODEREF id="tiny_plate_6" />
+            <NODEREF id="tiny_plate_7" />
+            <NODEREF id="tiny_plate_8" />
+            <NODEREF id="tiny_plate_9" />
+            <LEAF type="cylinder" args="0.2 6 6 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- North Plate -->
+
+    <NODE id="plate_2">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="30" y="0.1" z="10" />
+        <ROTATION axis="x" angle="90" />
+
+        <DESCENDANTS>
+            <NODEREF id="tiny_plate_10" />
+            <NODEREF id="tiny_plate_11" />
+            <NODEREF id="tiny_plate_12" />
+            <NODEREF id="tiny_plate_13" />
+            <NODEREF id="tiny_plate_14" />
+            <NODEREF id="tiny_plate_15" />
+            <NODEREF id="tiny_plate_16" />
+            <NODEREF id="tiny_plate_17" />
+            <NODEREF id="tiny_plate_18" />
+            <LEAF type="cylinder" args="0.2 6 6 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthEast Plate -->
+
+    <NODE id="plate_3">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="43" y="0.1" z="17" />
+        <ROTATION axis="x" angle="90" />
+
+         <DESCENDANTS>
+            <NODEREF id="tiny_plate_19" />
+            <NODEREF id="tiny_plate_20" />
+            <NODEREF id="tiny_plate_21" />
+            <NODEREF id="tiny_plate_22" />
+            <NODEREF id="tiny_plate_23" />
+            <NODEREF id="tiny_plate_24" />
+            <NODEREF id="tiny_plate_25" />
+            <NODEREF id="tiny_plate_26" />
+            <NODEREF id="tiny_plate_27" />
+            <LEAF type="cylinder" args="0.2 6 6 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- West Plate -->
+
+    <NODE id="plate_4">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="10" y="0.1" z="30" />
+        <ROTATION axis="x" angle="90" />
+
+         <DESCENDANTS>
+            <NODEREF id="tiny_plate_28" />
+            <NODEREF id="tiny_plate_29" />
+            <NODEREF id="tiny_plate_30" />
+            <NODEREF id="tiny_plate_31" />
+            <NODEREF id="tiny_plate_32" />
+            <NODEREF id="tiny_plate_33" />
+            <NODEREF id="tiny_plate_34" />
+            <NODEREF id="tiny_plate_35" />
+            <NODEREF id="tiny_plate_36" />
+            <LEAF type="cylinder" args="0.2 6 6 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- East Plate -->
+
+    <NODE id="plate_5">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="50" y="0.1" z="30" />
+        <ROTATION axis="x" angle="90" />
+
+         <DESCENDANTS>
+            <NODEREF id="tiny_plate_37" />
+            <NODEREF id="tiny_plate_38" />
+            <NODEREF id="tiny_plate_39" />
+            <NODEREF id="tiny_plate_40" />
+            <NODEREF id="tiny_plate_41" />
+            <NODEREF id="tiny_plate_42" />
+            <NODEREF id="tiny_plate_43" />
+            <NODEREF id="tiny_plate_44" />
+            <NODEREF id="tiny_plate_45" />
+            <LEAF type="cylinder" args="0.2 6 6 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthWest Plate -->
+
+    <NODE id="plate_6">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="17" y="0.1" z="43" />
+        <ROTATION axis="x" angle="90" />
+
+         <DESCENDANTS>
+            <NODEREF id="tiny_plate_46" />
+            <NODEREF id="tiny_plate_47" />
+            <NODEREF id="tiny_plate_48" />
+            <NODEREF id="tiny_plate_49" />
+            <NODEREF id="tiny_plate_50" />
+            <NODEREF id="tiny_plate_51" />
+            <NODEREF id="tiny_plate_52" />
+            <NODEREF id="tiny_plate_53" />
+            <NODEREF id="tiny_plate_54" />
+            <LEAF type="cylinder" args="0.2 6 6 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthEast Plate -->
+
+    <NODE id="plate_7">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="43" y="0.1" z="43" />
+        <ROTATION axis="x" angle="90" />
+
+         <DESCENDANTS>
+            <NODEREF id="tiny_plate_55" />
+            <NODEREF id="tiny_plate_56" />
+            <NODEREF id="tiny_plate_57" />
+            <NODEREF id="tiny_plate_58" />
+            <NODEREF id="tiny_plate_59" />
+            <NODEREF id="tiny_plate_60" />
+            <NODEREF id="tiny_plate_61" />
+            <NODEREF id="tiny_plate_62" />
+            <NODEREF id="tiny_plate_63" />
+            <LEAF type="cylinder" args="0.2 6 6 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- South Plate -->
+
+    <NODE id="plate_8">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="30" y="0.1" z="50" />
+        <ROTATION axis="x" angle="90" />
+
+        <DESCENDANTS>
+            <NODEREF id="tiny_plate_64" />
+            <NODEREF id="tiny_plate_65" />
+            <NODEREF id="tiny_plate_66" />
+            <NODEREF id="tiny_plate_67" />
+            <NODEREF id="tiny_plate_68" />
+            <NODEREF id="tiny_plate_69" />
+            <NODEREF id="tiny_plate_70" />
+            <NODEREF id="tiny_plate_71" />
+            <NODEREF id="tiny_plate_72" />
+            <LEAF type="cylinder" args="0.2 6 6 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- Center Plate -->
+
+    <NODE id="plate_9">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="30" y="0.1" z="30" />
+        <ROTATION axis="x" angle="90"/>
+
+
+        <DESCENDANTS>
+            <NODEREF id="tiny_plate_73" />
+            <NODEREF id="tiny_plate_74" />
+            <NODEREF id="tiny_plate_75" />
+            <NODEREF id="tiny_plate_76" />
+            <NODEREF id="tiny_plate_77" />
+            <NODEREF id="tiny_plate_78" />
+            <NODEREF id="tiny_plate_79" />
+            <NODEREF id="tiny_plate_80" />
+            <NODEREF id="tiny_plate_81" />
+            <LEAF type="cylinder" args="0.2 6 6 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+
+    <!-- Center tiny plate -->
+
+    <NODE id="tiny_plate_1">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- North Tiny plate -->
+
+    <NODE id="tiny_plate_2">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="-4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthWest tiny plate -->
+
+    <NODE id="tiny_plate_3">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthEast tiny plate -->
+
+    <NODE id="tiny_plate_4">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- West tiny table -->
+
+    <NODE id="tiny_plate_5">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- East tiny table -->
+
+    <NODE id="tiny_plate_6">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthWest tiny table -->
+
+    <NODE id="tiny_plate_7">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthEast tiny table -->
+
+    <NODE id="tiny_plate_8">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+     <!-- South tiny table -->
+
+    <NODE id="tiny_plate_9">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- Center tiny plate -->
+
+    <NODE id="tiny_plate_10">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- North Tiny plate -->
+
+    <NODE id="tiny_plate_11">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="-4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthWest tiny plate -->
+
+    <NODE id="tiny_plate_12">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthEast tiny plate -->
+
+    <NODE id="tiny_plate_13">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- West tiny table -->
+
+    <NODE id="tiny_plate_14">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- East tiny table -->
+
+    <NODE id="tiny_plate_15">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthWest tiny table -->
+
+    <NODE id="tiny_plate_16">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthEast tiny table -->
+
+    <NODE id="tiny_plate_17">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+     <!-- South tiny table -->
+
+    <NODE id="tiny_plate_18">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- Center tiny plate -->
+
+    <NODE id="tiny_plate_19">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- North Tiny plate -->
+
+    <NODE id="tiny_plate_20">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="-4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthWest tiny plate -->
+
+    <NODE id="tiny_plate_21">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthEast tiny plate -->
+
+    <NODE id="tiny_plate_22">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- West tiny table -->
+
+    <NODE id="tiny_plate_23">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- East tiny table -->
+
+    <NODE id="tiny_plate_24">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthWest tiny table -->
+
+    <NODE id="tiny_plate_25">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthEast tiny table -->
+
+    <NODE id="tiny_plate_26">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+     <!-- South tiny table -->
+
+    <NODE id="tiny_plate_27">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- Center tiny plate -->
+
+    <NODE id="tiny_plate_28">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- North Tiny plate -->
+
+    <NODE id="tiny_plate_29">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="-4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthWest tiny plate -->
+
+    <NODE id="tiny_plate_30">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthEast tiny plate -->
+
+    <NODE id="tiny_plate_31">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- West tiny table -->
+
+    <NODE id="tiny_plate_32">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- East tiny table -->
+
+    <NODE id="tiny_plate_33">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthWest tiny table -->
+
+    <NODE id="tiny_plate_34">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthEast tiny table -->
+
+    <NODE id="tiny_plate_35">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+     <!-- South tiny table -->
+
+    <NODE id="tiny_plate_36">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- Center tiny plate -->
+
+    <NODE id="tiny_plate_37">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- North Tiny plate -->
+
+    <NODE id="tiny_plate_38">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="-4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthWest tiny plate -->
+
+    <NODE id="tiny_plate_39">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthEast tiny plate -->
+
+    <NODE id="tiny_plate_40">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- West tiny table -->
+
+    <NODE id="tiny_plate_41">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- East tiny table -->
+
+    <NODE id="tiny_plate_42">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthWest tiny table -->
+
+    <NODE id="tiny_plate_43">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthEast tiny table -->
+
+    <NODE id="tiny_plate_44">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+     <!-- South tiny table -->
+
+    <NODE id="tiny_plate_45">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- Center tiny plate -->
+
+    <NODE id="tiny_plate_46">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- North Tiny plate -->
+
+    <NODE id="tiny_plate_47">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="-4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthWest tiny plate -->
+
+    <NODE id="tiny_plate_48">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthEast tiny plate -->
+
+    <NODE id="tiny_plate_49">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- West tiny table -->
+
+    <NODE id="tiny_plate_50">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- East tiny table -->
+
+    <NODE id="tiny_plate_51">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthWest tiny table -->
+
+    <NODE id="tiny_plate_52">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthEast tiny table -->
+
+    <NODE id="tiny_plate_53">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+     <!-- South tiny table -->
+
+    <NODE id="tiny_plate_54">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- Center tiny plate -->
+
+    <NODE id="tiny_plate_55">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- North Tiny plate -->
+
+    <NODE id="tiny_plate_56">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="-4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthWest tiny plate -->
+
+    <NODE id="tiny_plate_57">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthEast tiny plate -->
+
+    <NODE id="tiny_plate_58">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- West tiny table -->
+
+    <NODE id="tiny_plate_59">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- East tiny table -->
+
+    <NODE id="tiny_plate_60">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthWest tiny table -->
+
+    <NODE id="tiny_plate_61">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthEast tiny table -->
+
+    <NODE id="tiny_plate_62">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+     <!-- South tiny table -->
+
+    <NODE id="tiny_plate_63">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- Center tiny plate -->
+
+    <NODE id="tiny_plate_64">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- North Tiny plate -->
+
+    <NODE id="tiny_plate_65">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="-4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthWest tiny plate -->
+
+    <NODE id="tiny_plate_66">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthEast tiny plate -->
+
+    <NODE id="tiny_plate_67">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- West tiny table -->
+
+    <NODE id="tiny_plate_68">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- East tiny table -->
+
+    <NODE id="tiny_plate_69">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthWest tiny table -->
+
+    <NODE id="tiny_plate_70">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthEast tiny table -->
+
+    <NODE id="tiny_plate_71">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+     <!-- South tiny table -->
+
+    <NODE id="tiny_plate_72">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- Center tiny plate -->
+
+    <NODE id="tiny_plate_73">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- North Tiny plate -->
+
+    <NODE id="tiny_plate_74">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="-4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthWest tiny plate -->
+
+    <NODE id="tiny_plate_75">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- NorthEast tiny plate -->
+
+    <NODE id="tiny_plate_76">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="-3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- West tiny table -->
+
+    <NODE id="tiny_plate_77">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- East tiny table -->
+
+    <NODE id="tiny_plate_78">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="4" y="0" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthWest tiny table -->
+
+    <NODE id="tiny_plate_79">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="-3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- SouthEast tiny table -->
+
+    <NODE id="tiny_plate_80">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="3" y="3" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+     <!-- South tiny table -->
+
+    <NODE id="tiny_plate_81">
+        <MATERIAL id="white" />
+        <TEXTURE id="clear" />
+
+        <TRANSLATION x="0" y="4" z="-0.1" />
+        <ROTATION axis="y" angle="180" />
+
+        <DESCENDANTS>
+             <LEAF type="cylinder" args="0.08 0.6 1 8 40 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- Borders of the main board -->
+
+    <NODE id="borders">
+        <MATERIAL id="board_material" />
+        <TEXTURE id="clear" />
+
+        <DESCENDANTS>
+            <NODEREF id="cover" />
+            <NODEREF id="legs" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- Top of the table -->
+
+    <NODE id="cover">
+        <MATERIAL id="board_material" />
+        <TEXTURE id="rosewood" />
+
+        <TRANSLATION x="30" y="0" z="30" />
+        <ROTATION axis="x" angle="90"/>
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="1 32 32 6 6 1 1" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- Legs of the table -->
+
+    <NODE id="legs">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="rosewood" />
+
+        <DESCENDANTS>
+            <NODEREF id="leg_1" />
+            <NODEREF id="leg_2" />
+            <NODEREF id="leg_3" />
+            <NODEREF id="leg_4" />
+            <NODEREF id="leg_5" />
+            <NODEREF id="leg_6" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- 1 leg of the table -->
+    <NODE id="leg_1">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="0.5" y="-0.1" z="30" />
+        <ROTATION axis="x" angle ="90" />
+
+        <DESCENDANTS>
+            <NODEREF id="leg_template" />
+        </DESCENDANTS>
+
+    </NODE>
+
+    <!-- Another table leg -->
+    <NODE id="leg_2">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="15" y="-0.1" z="4.5" />
+        <ROTATION axis="x" angle ="90" />
+
+        <DESCENDANTS>
+            <NODEREF id="leg_template" />
+        </DESCENDANTS>
+
+    </NODE>
+
+     <!-- Another table leg -->
+    <NODE id="leg_3">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="45" y="-0.1" z="5" />
+        <ROTATION axis="x" angle ="90" />
+
+        <DESCENDANTS>
+            <NODEREF id="leg_template" />
+        </DESCENDANTS>
+
+    </NODE>
+
+    <!-- Another one -->
+    <NODE id="leg_4">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="59.5" y="-0.1" z="30" />
+        <ROTATION axis="x" angle ="90" />
+
+        <DESCENDANTS>
+            <NODEREF id="leg_template" />
+        </DESCENDANTS>
+
+    </NODE>
+
+     <!-- Another one -->
+    <NODE id="leg_5">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="45" y="-0.1" z="55" />
+        <ROTATION axis="x" angle ="90" />
+
+        <DESCENDANTS>
+            <NODEREF id="leg_template" />
+        </DESCENDANTS>
+    </NODE>
+
+    <!-- Another table leg -->
+    <NODE id="leg_6">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <TRANSLATION x="15" y="-0.1" z="55" />
+        <ROTATION axis="x" angle ="90" />
+
+        <DESCENDANTS>
+            <NODEREF id="leg_template" />
+        </DESCENDANTS>
+
+    </NODE>
+
+    <NODE id="leg_template">
+        <MATERIAL id="default_material" />
+        <TEXTURE id="null" />
+
+        <DESCENDANTS>
+            <LEAF type="cylinder" args="15 2 2 4 4 1 1" />
+        </DESCENDANTS>
+
+    </NODE>
+			
+	<!-- Black game pieces -->
+	<NODE id="teacup_black_1">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="38.2" y="6.9" z="15" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_2">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="39.4" y="6.9" z="15" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_3">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="40.6" y="6.9" z="15" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_4">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="41.8" y="6.9" z="15" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_5">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="43" y="6.9" z="15" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_6">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="44.2" y="6.9" z="15" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_7">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="45.4" y="6.9" z="15" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_8">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="46.6" y="6.9" z="15" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_9">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="38.2" y="6.9" z="16.4" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_10">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="39.4" y="6.9" z="16.4" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_11">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="40.6" y="6.9" z="16.4" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_12">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="41.8" y="6.9" z="16.4" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_13">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="43" y="6.9" z="16.4" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_14">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="44.2" y="6.9" z="16.4" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_15">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="45.4" y="6.9" z="16.4" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_16">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="46.6" y="6.9" z="16.4" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_17">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="38.2" y="6.9" z="17.8" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_18">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="39.4" y="6.9" z="17.8" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_19">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="40.6" y="6.9" z="17.8" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_20">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="41.8" y="6.9" z="17.8" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_21">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="43" y="6.9" z="17.8" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_22">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="44.2" y="6.9" z="17.8" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_23">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="45.4" y="6.9" z="17.8" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_24">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="46.6" y="6.9" z="17.8" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_25">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="38.2" y="6.9" z="19.2" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_26">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="39.4" y="6.9" z="19.2" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_27">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="40.6" y="6.9" z="19.2" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_28">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="41.8" y="6.9" z="19.2" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_29">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="43" y="6.9" z="19.2" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_30">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="44.2" y="6.9" z="19.2" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_31">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="45.4" y="6.9" z="19.2" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_32">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="46.6" y="6.9" z="19.2" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_33">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="38.2" y="6.9" z="20.6" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_34">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="39.4" y="6.9" z="20.6" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_35">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="40.6" y="6.9" z="20.6" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_36">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="41.8" y="6.9" z="20.6" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_37">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="43" y="6.9" z="20.6" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_38">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="44.2" y="6.9" z="20.6" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_39">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="45.4" y="6.9" z="20.6" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+	<NODE id="teacup_black_40">
+		<MATERIAL id="default_material" /> <TEXTURE id="teacup_black" />
+		<TRANSLATION x="46.6" y="6.9" z="20.6" />
+		<DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+	</NODE>
+
+    <!-- Green game pieces -->
+    <NODE id="teacup_green_1">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="38.2" y="6.9" z="34" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_2">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="39.4" y="6.9" z="34" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_3">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="40.6" y="6.9" z="34" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_4">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="41.8" y="6.9" z="34" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_5">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="43" y="6.9" z="34" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_6">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="44.2" y="6.9" z="34" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_7">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="45.4" y="6.9" z="34" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_8">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="46.6" y="6.9" z="34" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_9">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="38.2" y="6.9" z="35.4" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_10">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="39.4" y="6.9" z="35.4" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_11">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="40.6" y="6.9" z="35.4" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_12">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="41.8" y="6.9" z="35.4" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_13">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="43" y="6.9" z="35.4" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_14">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="44.2" y="6.9" z="35.4" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_15">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="45.4" y="6.9" z="35.4" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_16">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="46.6" y="6.9" z="35.4" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_17">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="38.2" y="6.9" z="36.8" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_18">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="39.4" y="6.9" z="36.8" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_19">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="40.6" y="6.9" z="36.8" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_20">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="41.8" y="6.9" z="36.8" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_21">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="43" y="6.9" z="36.8" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_22">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="44.2" y="6.9" z="36.8" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_23">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="45.4" y="6.9" z="36.8" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_24">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="46.6" y="6.9" z="36.8" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_25">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="38.2" y="6.9" z="38.2" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_26">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="39.4" y="6.9" z="38.2" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_27">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="40.6" y="6.9" z="38.2" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_28">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="41.8" y="6.9" z="38.2" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_29">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="43" y="6.9" z="38.2" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_30">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="44.2" y="6.9" z="38.2" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_31">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="45.4" y="6.9" z="38.2" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_32">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="46.6" y="6.9" z="38.2" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_33">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="38.2" y="6.9" z="39.6" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_34">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="39.4" y="6.9" z="39.6" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_35">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="40.6" y="6.9" z="39.6" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_36">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="41.8" y="6.9" z="39.6" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_37">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="43" y="6.9" z="39.6" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_38">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="44.2" y="6.9" z="39.6" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_39">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="45.4" y="6.9" z="39.6" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+    <NODE id="teacup_green_40">
+        <MATERIAL id="default_material" /> <TEXTURE id="teacup_green" />
+        <TRANSLATION x="46.6" y="6.9" z="39.6" />
+        <DESCENDANTS> <NODEREF id="teacup" /> </DESCENDANTS>
+    </NODE>
+
+	<!-- Teacup, modeled based on IKEA's VÄRDERA model -->
+	<NODE id="teacup">
+		<MATERIAL id="default_material" />
+		<TEXTURE id="null" />
+        <TRANSLATION x="0" y="0.2" z="0" />
+        <SCALE sx="0.5" sy="0.5" sz="0.5" />
+		<DESCENDANTS>
+			<NODEREF id="teacup_body" />
+            <NODEREF id="teacup_tea" />
+		</DESCENDANTS>
+	</NODE>
+
+	<!-- Teacup body -->
+	<NODE id="teacup_body">
+		<MATERIAL id="default_material" />
+		<TEXTURE id="null" />
+
+		<DESCENDANTS>
+			<LEAF type="patch" args="20 20">
+        		<CPLINE>
+          			<CPOINT xx="0" yy="1.3" zz="-1.2" ww="1" />
+          			<CPOINT xx="-1.2" yy="1.3" zz="-1.2" ww="0.707" />
+          			<CPOINT xx="-1.2" yy="1.3" zz="0" ww="1" />
+          			<CPOINT xx="-1.2" yy="1.3" zz="1.2" ww="0.707" />
+          			<CPOINT xx="0" yy="1.3" zz="1.2" ww="1" />
+          			<CPOINT xx="1.2" yy="1.3" zz="1.2" ww="0.707" />
+          			<CPOINT xx="1.2" yy="1.3" zz="0" ww="1" />
+          			<CPOINT xx="1.2" yy="1.3" zz="-1.2" ww="0.707" />
+          			<CPOINT xx="0" yy="1.3" zz="-1.2" ww="1" />
+        		</CPLINE>
+        		<CPLINE>
+          			<CPOINT xx="0" yy="0.5" zz="-1.2" ww="1" />
+          			<CPOINT xx="-1.2" yy="0.5" zz="-1.2" ww="0.707" />
+          			<CPOINT xx="-1.2" yy="0.5" zz="0" ww="1" />
+          			<CPOINT xx="-1.2" yy="0.5" zz="1.2" ww="0.707" />
+          			<CPOINT xx="0" yy="0.5" zz="1.2" ww="1" />
+          			<CPOINT xx="1.2" yy="0.5" zz="1.2" ww="0.707" />
+          			<CPOINT xx="1.2" yy="0.5" zz="0" ww="1" />
+          			<CPOINT xx="1.2" yy="0.5" zz="-1.2" ww="0.707" />
+          			<CPOINT xx="0" yy="0.5" zz="-1.2" ww="1" />
+        		</CPLINE>
+				<CPLINE>
+          			<CPOINT xx="0" yy="0.3" zz="-0.6" ww="1" />
+          			<CPOINT xx="-0.6" yy="0.3" zz="-0.6" ww="0.707" />
+          			<CPOINT xx="-0.6" yy="0.3" zz="0" ww="1" />
+          			<CPOINT xx="-0.6" yy="0.3" zz="0.6" ww="0.707" />
+          			<CPOINT xx="0" yy="0.3" zz="0.6" ww="1" />
+          			<CPOINT xx="0.6" yy="0.3" zz="0.6" ww="0.707" />
+          			<CPOINT xx="0.6" yy="0.3" zz="0" ww="1" />
+          			<CPOINT xx="0.6" yy="0.3" zz="-0.6" ww="0.707" />
+          			<CPOINT xx="0" yy="0.3" zz="-0.6" ww="1" />
+        		</CPLINE>
+        		<CPLINE>
+          			<CPOINT xx="0" yy="0" zz="-0.5" ww="1" />
+          			<CPOINT xx="-0.5" yy="0" zz="-0.5" ww="0.707" />
+          			<CPOINT xx="-0.5" yy="0" zz="0" ww="1" />
+          			<CPOINT xx="-0.5" yy="0" zz="0.5" ww="0.707" />
+          			<CPOINT xx="0" yy="0" zz="0.5" ww="1" />
+          			<CPOINT xx="0.5" yy="0" zz="0.5" ww="0.707" />
+          			<CPOINT xx="0.5" yy="0" zz="0" ww="1" />
+          			<CPOINT xx="0.5" yy="0" zz="-0.5" ww="0.707" />
+          			<CPOINT xx="0" yy="0" zz="-0.5" ww="1" />
+        		</CPLINE>
+        	</LEAF>
+		</DESCENDANTS>
+	</NODE>
+
+	<!-- Teacup handle -->
+	<NODE id="teacup_tea">
+		<MATERIAL id="default_material" /> <TEXTURE id="null" />
+        <TRANSLATION x="0" y="1.2" z="-0.2" />
+        <ROTATION axis="x" angle="-90" />
+		<DESCENDANTS> <LEAF type="cylinder" args="0.05 0.89 0.89 50 50 1 1" /> </DESCENDANTS>
+	</NODE>
+
+</NODES>
+
+
+
+</SCENE>
